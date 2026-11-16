@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="五叶守护所在健康管理行业研究报告：国内外成功与失败案例、软硬件生态、商业模式、行业洞察及产品市场机会。">
+<title>五叶守护｜健康管理行业研究报告</title>
+<style>
+:root{
+  --ink:#172536;--muted:#617184;--line:#dce4eb;--paper:#f5f7f9;--white:#fff;
+  --navy:#18324b;--teal:#197b78;--teal-soft:#e8f4f2;--blue-soft:#edf3f8;
+  --amber:#a9681d;--amber-soft:#fff4e6;--red:#a84747;--red-soft:#fff0ef;
+  --shadow:0 8px 28px rgba(20,42,64,.07);--radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+a{color:#176c86;text-decoration:none}a:hover{text-decoration:underline}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(18,43,65,.96);color:#fff;backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.12)}
+.topbar-inner{max-width:1440px;margin:auto;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:700;letter-spacing:.04em;font-size:14px}.top-actions{display:flex;gap:10px;align-items:center}
+.top-actions button{border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:7px;padding:7px 12px;cursor:pointer;font-size:12px}
+.layout{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;padding:28px 24px 60px}
+.sidebar{position:sticky;top:68px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 15px;box-shadow:var(--shadow)}
+.sidebar h3{margin:0 0 10px;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.sidebar a{display:block;padding:7px 9px;border-radius:7px;color:#3e5266;font-size:13px;line-height:1.45}
+.sidebar a:hover,.sidebar a.active{background:var(--teal-soft);color:#12625f;text-decoration:none}
+.sidebar .sub{padding-left:22px;font-size:12px}
+main{min-width:0}
+.hero{background:linear-gradient(125deg,#17344e 0%,#20566a 60%,#267c78 100%);color:#fff;padding:42px 44px;border-radius:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-170px;box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 75px rgba(255,255,255,.025)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#b9d8d8;font-weight:700}
+.hero h1{font-size:34px;line-height:1.25;margin:12px 0 14px;max-width:800px}
+.hero p{max-width:850px;color:#e0ebef;margin:0;font-size:16px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.hero-meta span{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);padding:5px 10px;border-radius:30px;font-size:12px;color:#eff7f8}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 26px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.kpi strong{display:block;font-size:23px;color:var(--navy);line-height:1.2}
+.kpi span{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.section{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 34px;margin:18px 0;box-shadow:var(--shadow)}
+.section-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.num{flex:0 0 34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+h2{font-size:24px;line-height:1.35;margin:0;color:var(--navy)}
+h3{font-size:18px;line-height:1.45;margin:25px 0 10px;color:#213d55}
+h4{font-size:15px;margin:18px 0 8px;color:#25445d}
+p{margin:9px 0}
+.lead{font-size:16px;color:#354d62}
+.small{font-size:12px;color:var(--muted)}
+.muted{color:var(--muted)}
+.callout{padding:15px 18px;border-left:4px solid var(--teal);background:var(--teal-soft);border-radius:0 9px 9px 0;margin:16px 0}
+.warning{padding:15px 18px;border-left:4px solid var(--amber);background:var(--amber-soft);border-radius:0 9px 9px 0;margin:16px 0}
+.danger{padding:15px 18px;border-left:4px solid var(--red);background:var(--red-soft);border-radius:0 9px 9px 0;margin:16px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:11px;padding:16px;background:#fff}
+.card h4{margin:0 0 8px}
+.tag{display:inline-block;border-radius:20px;padding:3px 8px;font-size:11px;background:var(--blue-soft);color:#31536f;margin:2px 4px 2px 0}
+.tag.good{background:var(--teal-soft);color:#176a66}.tag.warn{background:var(--amber-soft);color:#8a581e}.tag.bad{background:var(--red-soft);color:#9a4242}
+table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13px}
+th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f0f4f7;color:#314b62;font-weight:700}
+tr:last-child td{border-bottom:0}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;margin:14px 0}
+.table-wrap table{margin:0;min-width:680px}
+ul,ol{padding-left:22px}li{margin:5px 0}
+.case{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
+.case-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;background:#f4f7f9;padding:15px 18px;border-bottom:1px solid var(--line)}
+.case-head h3{margin:0;font-size:18px}
+.case-body{padding:17px 19px}
+.case-meta{font-size:12px;color:var(--muted);text-align:right;min-width:110px}
+.case-body h4{margin-top:13px}
+.pillrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:16px 0}
+.flow span{background:#eef4f6;border:1px solid #d6e3e7;border-radius:8px;padding:8px 11px;font-size:12px;color:#2d4d61}
+.flow b{color:var(--teal);font-size:16px}
+.barlist{margin:16px 0}
+.barrow{display:grid;grid-template-columns:140px 1fr 55px;gap:10px;align-items:center;margin:10px 0;font-size:12px}
+.bar{height:10px;background:#e8eef2;border-radius:10px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#1b7777,#4ba39a);border-radius:10px}
+.score{font-weight:700;color:var(--teal)}
+.footer{padding:25px 5px;color:var(--muted);font-size:12px;text-align:center}
+.source-list{columns:2;column-gap:30px}.source-list li{break-inside:avoid;margin-bottom:9px;font-size:12px}
+.note{font-size:12px;color:var(--muted);background:#f7f9fa;border-radius:8px;padding:10px 13px;margin:12px 0}
+hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+@media(max-width:1050px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:auto;max-height:none;display:grid;grid-template-columns:repeat(2,1fr);gap:2px}.sidebar h3{grid-column:1/-1}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.layout{padding:14px 10px 35px}.hero{padding:28px 23px}.hero h1{font-size:27px}.section{padding:22px 18px}.grid2,.grid3{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr 1fr}.kpis{gap:8px}.kpi{padding:12px}.kpi strong{font-size:19px}.source-list{columns:1}.case-head{display:block}.case-meta{text-align:left;margin-top:5px}}
+@media print{body{background:#fff;font-size:11pt}.topbar,.sidebar,.top-actions{display:none!important}.layout{display:block;padding:0;max-width:none}.hero,.section,.kpi{box-shadow:none;break-inside:avoid}.section{border:0;border-top:1px solid #bbb;border-radius:0;padding:18px 0;margin:0}.hero{border-radius:0}.case{break-inside:avoid}.source-list{columns:2}a{color:inherit;text-decoration:none}.no-print{display:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">五叶守护 · HEALTH MANAGEMENT INDUSTRY</div>
+    <div class="top-actions">
+      <button onclick="window.print()">打印 / 导出 PDF</button>
+      <button onclick="document.documentElement.scrollTo({top:0,behavior:'smooth'})">回到顶部 ↑</button>
+    </div>
+  </div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="toc">
+  <h3>报告目录</h3>
+  <a href="#summary">执行摘要</a>
+  <a href="#scope">01 研究边界与行业地图</a>
+  <a href="#models">02 产业链与商业模式</a>
+  <a href="#success">03 成功案例</a>
+  <a class="sub" href="#cncases">国内案例</a>
+  <a class="sub" href="#globalcases">海外案例</a>
+  <a href="#failure">04 失败与受挫案例</a>
+  <a href="#software">05 软件与硬件生态</a>
+  <a href="#insights">06 行业研究洞察</a>
+  <a href="#opportunity">07 产品市场机会</a>
+  <a href="#strategy">08 五叶守护产品战略</a>
+  <a href="#metrics">09 商业化与指标体系</a>
+  <a href="#risks">10 风险与待验证问题</a>
+  <a href="#sources">资料来源与口径</a>
+</aside>
+
+<main>
+<section class="hero" id="summary">
+  <div class="eyebrow">Industry research · Product strategy · Competitive intelligence</div>
+  <h1>健康管理行业研究报告</h1>
+  <p>以五叶守护所在的医院及专业机构健康管理赛道为中心，研究国内外成功企业、失败路径、软件与硬件生态、支付机制和产品机会。重点不是罗列功能，而是判断哪些模式已经形成真实经营闭环，以及五叶守护可以在哪个环节建立可复制的产品能力。</p>
+  <div class="hero-meta">
+    <span>研究对象：中国为主，兼顾美国、欧洲及全球产品案例</span>
+    <span>资料截止：2026 年 11 月</span>
+    <span>研究类型：行业 / 竞品 / 商业模式 / 产品战略</span>
+    <span>版本：整合研究版</span>
+  </div>
+</section>
+
+<div class="kpis">
+  <div class="kpi"><strong>6 类</strong><span>健康管理产业参与者</span></div>
+  <div class="kpi"><strong>8 家</strong><span>重点成功或模式参考企业</span></div>
+  <div class="kpi"><strong>5 类</strong><span>失败、收缩或转型案例</span></div>
+  <div class="kpi"><strong>4 阶段</strong><span>五叶守护产品演进建议</span></div>
+</div>
+
+<section class="section">
+  <div class="section-head"><div class="num">结论</div><div><h2>先看结论：健康管理不是卖一个 App，而是组织一项持续服务</h2><p class="small">本报告的核心判断</p></div></div>
+  <p class="lead">健康管理企业真正的竞争力，通常不是单一算法、单一设备或单一软件功能，而是把健康数据、专业人员、标准化干预流程、用户持续参与和支付方组织成一套可持续交付的服务体系。</p>
+  <div class="callout"><strong>对五叶守护最有价值的定位：</strong>医院及专业健康管理机构的数字化运营基础设施，以标准化健康管理项目为核心，以 AI 和智能设备为效率工具，以可追踪的健康结果和机构运营价值为评价依据。</div>
+  <div class="grid2">
+    <div class="card"><h4>不建议做</h4><ul><li>不以通用 C 端健康 App 为主战场。</li><li>不自研全套硬件，避免过早进入重资产竞争。</li><li>不把建档、打卡、报告数量当成健康改善结果。</li><li>不一开始覆盖所有疾病和所有客户类型。</li></ul></div>
+    <div class="card"><h4>建议优先做</h4><ul><li>把医院健康管理流程做成标准化软件产品。</li><li>优先做体重、营养和代谢管理项目。</li><li>把 AI 用在方案生成、数据解读、任务运营和健管师提效。</li><li>接入第三方设备，形成连续数据和干预闭环。</li></ul></div>
+  </div>
+  <div class="warning"><strong>重要口径：</strong>公司营收不等于健康管理业务营收；用户覆盖数不等于活跃用户；服务人次不等于独立用户；签约人群不等于实际参与人群；调整后 EBITDA 不等于 GAAP 净利润。本报告在案例中尽量标注业务边界和财务口径。</div>
+</section>
+
+<section class="section" id="scope">
+  <div class="section-head"><div class="num">01</div><div><h2>研究边界与行业地图</h2><p class="small">先明确五叶守护所在的不是单一赛道</p></div></div>
+  <h3>1.1 健康管理的定义</h3>
+  <p>本报告所称健康管理，指围绕个人或人群健康风险，通过健康信息采集、评估分层、干预计划、行为支持、专业服务、过程监测和效果评价，持续改善健康状态或降低疾病风险的服务过程。它可以发生在医院、体检中心、基层医疗、企业、保险和家庭场景。</p>
+  <p>它与相邻行业的边界如下：</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>领域</th><th>核心任务</th><th>与健康管理的关系</th><th>不能混淆的地方</th></tr></thead>
+    <tbody>
+      <tr><td>医疗诊断与治疗</td><td>诊断疾病、治疗疾病、处理急性问题</td><td>健康管理可与医疗服务衔接</td><td>健康管理不能替代诊断、处方和临床治疗</td></tr>
+      <tr><td>体检与筛查</td><td>发现异常、识别风险</td><td>是健康管理的重要入口</td><td>完成体检不代表完成健康管理</td></tr>
+      <tr><td>健康管理</td><td>长期风险管理与行为干预</td><td>本报告核心研究对象</td><td>不应只停留在数据展示或一次性建议</td></tr>
+      <tr><td>数字疗法</td><td>通过软件等数字干预支持特定疾病治疗或管理</td><td>是部分疾病管理项目的技术路径</td><td>需关注适应症、临床证据、监管与支付要求</td></tr>
+      <tr><td>健身与生活方式服务</td><td>运动、饮食、睡眠、体态改善</td><td>是健康管理常见干预手段</td><td>一般生活方式建议不等同于医疗服务</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 产业链：六类参与者</h3>
+  <div class="grid3">
+    <div class="card"><h4>入口与渠道</h4><p>医院、体检中心、基层医疗、企业、保险、药企、互联网平台。</p><span class="tag">获客</span><span class="tag">人群入口</span></div>
+    <div class="card"><h4>专业服务</h4><p>医生、护士、营养师、运动专业人员、健康管理师、心理与康复专业人员。</p><span class="tag">服务交付</span><span class="tag">专业审核</span></div>
+    <div class="card"><h4>数字化平台</h4><p>健康档案、评估、分层、方案、任务、随访、预警、报告、运营分析。</p><span class="tag">流程标准化</span><span class="tag">运营提效</span></div>
+    <div class="card"><h4>数据与设备</h4><p>体重秤、血压计、血糖仪、CGM、手环、手表、睡眠设备、医疗检测设备。</p><span class="tag">数据采集</span><span class="tag">连续监测</span></div>
+    <div class="card"><h4>支付方</h4><p>医院预算、企业雇主、商业保险、个人自费、公共卫生项目及其他机构采购方。</p><span class="tag">预算</span><span class="tag">合同</span></div>
+    <div class="card"><h4>评价与监管</h4><p>医疗质量、数据安全、个人信息保护、临床证据、服务效果、成本和续费。</p><span class="tag">合规</span><span class="tag">效果验证</span></div>
+  </div>
+  <h3>1.3 竞品分层：不要把所有健康 App 当成直接竞品</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>竞品类别</th><th>典型企业 / 产品</th><th>主要竞争点</th><th>对五叶守护的关系</th></tr></thead>
+    <tbody>
+      <tr><td>专业健康管理服务商</td><td>平安健康、Omada、Virta 等</td><td>服务路径、专业团队、持续干预、支付合同</td><td><b>核心模式参考</b></td></tr>
+      <tr><td>医院与体检数字化</td><td>美年健康及医院信息化厂商、体检管理平台</td><td>机构入口、检后转化、系统集成、运营流程</td><td><b>核心客户与场景</b></td></tr>
+      <tr><td>互联网医疗 / 慢病平台</td><td>方舟健客、京东健康等</td><td>患者入口、医生资源、药品与医疗服务</td><td>渠道与生态参考</td></tr>
+      <tr><td>数字健康干预</td><td>Omada、Hinge Health、Pear（历史案例）</td><td>标准化干预、行为改变、临床证据、支付方</td><td><b>产品方法参考</b></td></tr>
+      <tr><td>硬件与健康数据</td><td>鱼跃、Dexcom、Oura、Apple 等</td><td>设备、传感器、数据连续性、耗材或会员</td><td>数据能力与生态合作</td></tr>
+      <tr><td>企业健康与保险服务</td><td>平安健康、企业健康服务商、保险健康平台</td><td>企业合同、员工健康、风险管理、续约</td><td>中长期支付方拓展</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section" id="models">
+  <div class="section-head"><div class="num">02</div><div><h2>产业链与商业模式</h2><p class="small">谁使用、谁交付、谁付钱，是判断商业模式的第一原则</p></div></div>
+  <h3>2.1 常见商业模式对照</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>模式</th><th>付费方</th><th>收费单位</th><th>收入特点</th><th>主要难点</th></tr></thead>
+    <tbody>
+      <tr><td>医院软件 / SaaS</td><td>医院、医疗集团、健管中心</td><td>项目建设费、模块授权、年费、运维费</td><td>B 端合同收入</td><td>采购周期、招投标、接口和实施成本、回款</td></tr>
+      <tr><td>按人头健康管理</td><td>医院、企业、保险、服务机构</td><td>每人每年 / 每项目周期</td><td>随管理人数和续约增长</td><td>必须证明参与率、结果和成本可控</td></tr>
+      <tr><td>企业健康管理</td><td>雇主 / 企业福利预算</td><td>按员工、按年度、按服务包</td><td>合同制，可能续约</td><td>企业预算、员工参与率、ROI 归因</td></tr>
+      <tr><td>保险健康服务</td><td>保险公司 / 健康计划</td><td>会员服务费、项目费、合同费</td><td>与保险产品和人群运营结合</td><td>健康改善能否转化为赔付和留存价值</td></tr>
+      <tr><td>个人订阅</td><td>个人用户</td><td>月费、年费、会员套餐</td><td>订阅和复购</td><td>用户持续使用意愿、获客成本、流失</td></tr>
+      <tr><td>硬件 + 会员</td><td>个人 / 医疗机构 / 企业</td><td>设备销售、耗材、订阅服务</td><td>设备收入叠加持续服务收入</td><td>供应链、售后、设备留存和数据转化</td></tr>
+      <tr><td>药品 / 医疗服务生态</td><td>患者、药企、机构等</td><td>药品零售、问诊、复诊、专项服务</td><td>交易收入与服务收入并存</td><td>需区分健康管理价值与交易收入，防止诱导消费</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2.2 健康管理的价值链</h3>
+  <div class="flow">
+    <span>机构 / 用户入口</span><b>→</b><span>健康数据采集</span><b>→</b><span>风险评估与分层</span><b>→</b><span>管理计划</span><b>→</b><span>持续执行</span><b>→</b><span>专业干预</span><b>→</b><span>效果评价</span><b>↺</b><span>方案调整</span>
+  </div>
+  <p>价值并不平均分布在每个环节。建档和测量是基础；评估、计划和随访是流程；持续执行和专业干预决定用户是否得到服务；结果评价决定机构能否证明价值并续费。</p>
+  <div class="callout"><strong>一个可计算的商业逻辑：</strong>机构项目毛利 = 项目收入 − 人员服务成本 − 设备与耗材成本 − 系统与云资源成本 − 获客及渠道成本 − 实施交付成本。产品化的核心，是让新增一个机构或新增一百名用户时，边际交付成本不会同比例增长。</div>
+</section>
+
+<section class="section" id="success">
+  <div class="section-head"><div class="num">03</div><div><h2>成功案例：按已验证的商业模式拆解</h2><p class="small">成功不是“产品功能多”，而是有持续客户、收入或可验证的运营结果</p></div></div>
+  <div class="warning"><strong>案例选择说明：</strong>以下企业的规模、收入和经营阶段差异很大。公司总营收不能直接代表健康管理业务收入；海外企业的成员数、覆盖人群和活跃用户也不能直接横向比较。</div>
+
+  <h3 id="cncases">3.1 国内案例</h3>
+  <article class="case">
+    <div class="case-head"><h3>平安健康（1833.HK）</h3><div class="case-meta">综合健康服务<br><span class="tag good">商业化参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>保险生态 + 企业健康管理 + 医疗服务资源组织。公司把家庭医生、就医协助、健康管理、慢病管理等服务组合成面向企业、保险客户及个人的服务方案。</p>
+      <div class="pillrow"><span class="tag">企业健康管理</span><span class="tag">保险协同</span><span class="tag">医生与健康管理师</span><span class="tag">服务网络</span></div>
+      <h4>产品与交付</h4>
+      <ul><li>用户侧：健康咨询、健康档案、报告解读、就医协助、慢病相关服务。</li><li>专业侧：医生、健康管理师和医疗服务资源协同。</li><li>机构侧：企业员工健康管理、保险客户服务、服务运营与管理。</li><li>技术侧：线上服务入口、用户管理、服务调度、数据及运营分析。</li></ul>
+      <h4>商业模式与经营事实</h4>
+      <p>2025 年公司年报披露总收入约人民币 54.68 亿元，其中企业健康管理收入约人民币 13.06 亿元，同比增长约 40.6%；商业保险赋能收入约人民币 32.96 亿元。这里的企业健康管理是公司披露的业务分类，不应直接等同于所有健康管理服务收入。</p>
+      <h4>成功原因与局限</h4>
+      <ul><li><b>可借鉴：</b>拥有保险和企业客户入口；把医疗资源组织成服务；不只卖软件，而是销售服务组合。</li><li><b>不可简单复制：</b>其保险生态、品牌、资金和医疗资源网络具有规模优势；单个 SaaS 厂商很难复制。</li><li><b>对五叶守护：</b>学习“机构客户 + 服务项目 + 专业团队”的组合，不要把平安的综合平台形态当作近期产品目标。</li></ul>
+      <p class="small">资料：平安健康 2025 年年度报告（公开年报文本）。<a href="https://financialfilings.com/filings/ping-an-healthcare-and-technology-company-limited/annual-report/2026/33085833/" target="_blank" rel="noopener">查看报告</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>美年健康（002044.SZ）</h3><div class="case-meta">体检入口与检后服务<br><span class="tag good">入口型案例</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>企业团检和个人体检入口 + 检后健康服务。美年的重要资产是线下体检网络、企业客户关系和体检数据。</p>
+      <h4>产品与服务</h4>
+      <ul><li>线下体检、影像与检验检查，形成健康风险发现入口。</li><li>体检报告、异常指标识别、报告解读和专项健康服务。</li><li>通过数字化系统支持预约、检查、报告和机构运营。</li></ul>
+      <h4>经营事实与客观判断</h4>
+      <p>2025 年年报披露营业收入约人民币 103.6 亿元，其中体检服务收入约 99.09 亿元，占比约 95.66%；其他服务收入约 4.50 亿元，占比约 4.34%。体检服务收入同比下降约 4.08%，其他服务收入同比增长约 21.32%。</p>
+      <div class="warning">这个收入结构很重要：美年具备向检后管理延伸的战略空间，但公开财务结构显示其收入仍高度依赖体检服务。不能把“提出检后管理”理解成“检后健康管理已成为主要收入”。</div>
+      <h4>对五叶守护的启示</h4>
+      <ul><li>把体检异常结果转化为可执行的健康管理项目。</li><li>建立从体检报告到风险分层、服务推荐、随访和复测的闭环。</li><li>产品需同时服务体检机构的运营人员和后续健康管理人员。</li></ul>
+      <p class="small">资料：美年健康 2025 年年度报告。<a href="https://static.cninfo.com.cn/finalpage/2026-04-28/1225216618.PDF" target="_blank" rel="noopener">查看年报 PDF</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>方舟健客（06086.HK）</h3><div class="case-meta">互联网慢病与医药服务<br><span class="tag">生态参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>慢病患者入口 + 医患连接 + 在线医疗服务 + 药品供应链。它把慢病患者的长期需求与问诊、复诊、药品及健康服务连接起来。</p>
+      <h4>产品与商业结构</h4>
+      <ul><li>患者端：线上问诊、复诊、慢病服务、健康内容和用药相关服务。</li><li>医生端：患者连接、在线服务与随访。</li><li>商业化：医疗服务及线上零售药店等业务共同构成收入来源。</li></ul>
+      <p>公司披露 2025 年营业收入约人民币 35.3 亿元，净利润约人民币 1200 万元。这个数字是公司整体经营数据，不能把全部收入归为健康管理收入，也不能把药品交易额直接视为健康管理服务价值。</p>
+      <h4>对五叶守护的启示</h4>
+      <ul><li>慢病管理可与复诊、用药管理和专业服务形成连续关系。</li><li>健康管理系统应支持跨专业协同，但要明确医疗服务、药品交易与健康管理的边界。</li><li>不要把平台交易规模作为用户健康改善的替代指标。</li></ul>
+      <p class="small">资料：方舟健客 2025 年业绩公告（公司发布）。<a href="https://ebs.publicnow.com/view/154C97683B178E771B5024C16AB5BC466CA89E4D" target="_blank" rel="noopener">查看业绩公告</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>鱼跃医疗（002223.SZ）</h3><div class="case-meta">家用医疗设备<br><span class="tag good">硬件生态参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>医疗设备销售 + 家庭健康监测 + 配套数字服务。其优势在于设备研发、渠道、品牌和家庭监测数据入口。</p>
+      <h4>产品矩阵</h4>
+      <ul><li>家用健康检测：血压、血糖、血氧、体温等相关设备。</li><li>血糖管理及 POCT 解决方案。</li><li>呼吸治疗、临床器械与康复产品。</li><li>配套软件和数据服务，连接设备与用户管理。</li></ul>
+      <p>2025 年年报披露营业收入约人民币 79.01 亿元；其中血糖管理及 POCT 解决方案收入约人民币 12.81 亿元，家用健康检测解决方案收入约人民币 15.78 亿元。</p>
+      <h4>对五叶守护的启示</h4>
+      <ul><li>健康管理平台应建设设备接入层，而不是绑定某一家设备厂商。</li><li>要区分医疗级监测、家庭健康监测和消费级可穿戴数据。</li><li>数据采集只有与风险识别、任务触发和专业干预结合，才产生管理价值。</li></ul>
+      <p class="small">资料：鱼跃医疗 2025 年年度报告。<a href="https://static.cninfo.com.cn/finalpage/2026-04-25/1225185114.PDF" target="_blank" rel="noopener">查看年报 PDF</a></p>
+    </div>
+  </article>
+
+  <h3 id="globalcases">3.2 海外案例</h3>
+  <article class="case">
+    <div class="case-head"><h3>Omada Health（NASDAQ: OMDA）</h3><div class="case-meta">数字慢病管理<br><span class="tag good">最重要模式参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>雇主与保险等机构付费 + 数字化慢病干预 + 专业教练和临床团队。Omada 将体重、糖尿病预防、高血压、血脂等做成相对标准化的健康管理项目。</p>
+      <h4>产品组成</h4>
+      <ul><li>用户 App：课程、目标、任务、行为反馈和健康数据。</li><li>设备：体重秤、血压计、血糖监测设备等，按项目需要配置。</li><li>服务：健康教练、营养及临床支持。</li><li>运营后台：成员管理、风险分层、参与度、项目效果和支付方报告。</li><li>AI：用于健康教育、营养支持和教练工作流辅助，而非完全替代临床人员。</li></ul>
+      <h4>商业模式与经营验证</h4>
+      <p>主要面向雇主、商业保险和健康计划，按合同约定的服务对象、项目和支付规则收费。2025 年收入约 2.60 亿美元，年末成员约 88.6 万，同比增长约 55%；公司披露全年调整后 EBITDA 为正，但全年仍录得净亏损，2025 年第四季度实现 GAAP 净利润。</p>
+      <h4>成功原因</h4>
+      <ul><li>把“健康管理”拆成具体疾病和风险项目，便于销售、交付和评估。</li><li>机构付费减少对个人订阅习惯的依赖。</li><li>数字工具和专业人员混合交付，控制服务成本。</li><li>用参与率和健康结果向支付方说明项目价值。</li></ul>
+      <h4>对五叶守护的启示</h4>
+      <p>产品单位应该从“一个功能模块”升级为“一个标准化健康管理项目”：有入组条件、评估量表、管理周期、任务模板、人工介入规则、结项指标和复购方案。</p>
+      <p class="small">资料：Omada 2025 年全年业绩公告。<a href="https://www.omadahealth.com/resource-center/omada-health-reports-fourth-quarter-and-full-year-2025-results" target="_blank" rel="noopener">查看公司公告</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>Hinge Health（NYSE: HNGE）</h3><div class="case-meta">数字肌肉骨骼健康<br><span class="tag good">垂直场景参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>聚焦肌肉骨骼健康，通过企业和健康计划支付，提供远程运动康复、数字治疗支持和专业人员服务。</p>
+      <h4>产品组成</h4>
+      <ul><li>App 提供康复计划、运动课程和执行反馈。</li><li>动作识别技术辅助判断训练动作和姿势。</li><li>部分项目结合传感器、刺激设备等硬件。</li><li>物理治疗师、临床团队和健康教练参与服务。</li></ul>
+      <h4>商业验证与财务口径</h4>
+      <p>2025 年收入约 5.879 亿美元，同比增长约 51%；年末披露约 2830 家客户、约 2500 万签约覆盖人群、约 78.3 万成员。2025 年 GAAP 毛利率约 80%，但 GAAP 经营亏损约 5.464 亿美元；公司披露的非 GAAP 经营利润约 1.195 亿美元。不能把非 GAAP 盈利表述成 GAAP 盈利。</p>
+      <h4>成功原因与局限</h4>
+      <ul><li><b>可借鉴：</b>垂直聚焦、服务流程标准化、企业付费、技术提高交付效率。</li><li><b>需要警惕：</b>收入增长和高毛利并不自动意味着 GAAP 盈利；上市后股权激励等费用可能显著影响报表。</li><li><b>对五叶守护：</b>从体重、代谢或某个具体疾病管理场景做深，比做泛健康功能集合更容易形成差异化。</li></ul>
+      <p class="small">资料：Hinge Health 2025 年全年业绩公告及 SEC 文件。<a href="https://ir.hingehealth.com/news/news-details/2026/Hinge-Health-reports-fourth-quarter-and-full-year-2025-financial-results/default.aspx" target="_blank" rel="noopener">查看业绩公告</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>Oura（智能戒指）</h3><div class="case-meta">消费级可穿戴设备<br><span class="tag">软硬件组合参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>智能戒指硬件销售 + 会员订阅。通过睡眠、活动、心率和体温趋势等数据，提供日常健康洞察和行为建议。</p>
+      <p>Oura 2025 财年收入约 9.079 亿美元，其中硬件收入约 7.494 亿美元（约 83%），会员收入约 1.585 亿美元（约 17%）。该数据来自公司 S-1 文件。</p>
+      <h4>关键洞察</h4>
+      <ul><li>其收入主要仍来自硬件销售，不是一个纯订阅软件公司。</li><li>会员订阅可以提升长期收入和用户关系，但不能忽视硬件供应链、渠道和产品迭代。</li><li>消费级生理数据适合趋势和行为洞察，不应被无条件当作临床诊断依据。</li></ul>
+      <h4>对五叶守护的启示</h4>
+      <p>借鉴连续数据采集、趋势反馈和行为提醒；不建议照搬消费硬件自研路线。更适合通过标准接口接入设备生态。</p>
+      <p class="small">资料：Oura 2025 财年 S-1 文件。<a href="https://www.sec.gov/Archives/edgar/data/2133022/000119312526381855/d119865ds1.htm" target="_blank" rel="noopener">查看 SEC 文件</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>Dexcom（连续血糖监测）</h3><div class="case-meta">医疗级监测设备<br><span class="tag">专业设备参考</span></div></div>
+    <div class="case-body">
+      <p><b>核心模式：</b>连续血糖监测设备与传感器耗材，连接患者、医生和数字健康管理场景。其价值不在于“泛健康”，而在于特定疾病和监测场景中的高频、连续数据。</p>
+      <h4>对五叶守护的启示</h4>
+      <ul><li>优先接入能改变管理决策的数据，而不是追求设备数量。</li><li>明确数据来源、测量精度、采样频率和异常处理逻辑。</li><li>CGM 等设备有特定适用人群、医疗使用要求和成本，不应对所有体重管理用户无差别配置。</li></ul>
+      <p class="small">产品信息：<a href="https://www.dexcom.com/" target="_blank" rel="noopener">Dexcom 官方网站</a></p>
+    </div>
+  </article>
+
+  <h3>3.3 成功案例横向比较</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>企业</th><th>核心入口</th><th>产品单位</th><th>主要付费方</th><th>收入逻辑</th><th>对五叶守护最有价值的借鉴</th></tr></thead>
+    <tbody>
+      <tr><td>平安健康</td><td>保险、企业、个人</td><td>综合健康服务包</td><td>企业、保险、个人</td><td>服务合同、会员、保险协同</td><td>专业服务网络与支付方组织</td></tr>
+      <tr><td>美年健康</td><td>体检</td><td>体检 + 检后服务</td><td>企业、个人</td><td>体检服务、增值服务</td><td>检后管理入口和项目转化</td></tr>
+      <tr><td>方舟健客</td><td>慢病患者</td><td>医疗与慢病服务生态</td><td>患者及机构等</td><td>医疗服务、药品零售等</td><td>慢病患者长期运营</td></tr>
+      <tr><td>鱼跃医疗</td><td>家庭医疗设备</td><td>设备 + 配套数据服务</td><td>个人、机构</td><td>设备、耗材及服务</td><td>设备接入和可靠数据</td></tr>
+      <tr><td>Omada</td><td>雇主、保险</td><td>标准化疾病管理项目</td><td>企业、保险</td><td>合同制持续服务</td><td>标准项目、结果评价</td></tr>
+      <tr><td>Hinge Health</td><td>企业、健康计划</td><td>垂直康复项目</td><td>企业、支付方</td><td>合同制数字健康服务</td><td>垂直聚焦、技术提效</td></tr>
+      <tr><td>Oura</td><td>消费者</td><td>智能戒指 + 会员</td><td>个人</td><td>硬件销售 + 订阅</td><td>连续监测与会员价值</td></tr>
+      <tr><td>Dexcom</td><td>糖尿病监测场景</td><td>CGM 设备 + 传感器</td><td>患者、医疗支付体系</td><td>设备与耗材</td><td>高价值、连续、专业数据</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section" id="failure">
+  <div class="section-head"><div class="num">04</div><div><h2>失败、收缩与受挫案例</h2><p class="small">区分真正破产、资产出售、业务重组和产品商业化受挫</p></div></div>
+  <div class="warning"><strong>口径纠正：</strong>京东家医在 2024 年发生事业部组织调整，京东健康对媒体表示原 C 端和 B 端业务分别并入其他事业部，调整不涉及业务和人员裁撤。因此不应写成“京东家医整体关停”或“公司破产”。它是独立业务单元商业化受挫和组织重组案例。</div>
+
+  <article class="case">
+    <div class="case-head"><h3>Pear Therapeutics</h3><div class="case-meta">数字疗法<br><span class="tag bad">破产清算</span></div></div>
+    <div class="case-body">
+      <p><b>原模式：</b>处方数字疗法，通过医生开具软件处方，患者使用数字干预产品，期望由保险或医疗支付体系承担费用。</p>
+      <p><b>事件：</b>公司于 2023 年 4 月申请 Chapter 11 破产保护，后进入清算计划；2024 年相关债务人实体被依法解散。</p>
+      <p><b>暴露的问题：</b>临床价值、医生采用、保险覆盖和规模化收入并没有同步成熟；临床证据和监管路径带来时间与资金成本，支付体系建立速度不足以支撑持续经营。</p>
+      <p><b>对五叶守护：</b>不能把“医院认可”“用户愿意试用”当成采购和续费。立项时必须确认预算科目、支付方、采购决策链、验收标准和服务续费依据。</p>
+      <p class="small">资料：美国破产法院文件。<a href="https://cases.stretto.com/public/X237/12136/PLEADINGS/1213612262480000000076.pdf" target="_blank" rel="noopener">查看 Pear 解散通知</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>Babylon Health</h3><div class="case-meta">数字医疗平台<br><span class="tag bad">破产 / 资产出售</span></div></div>
+    <div class="case-body">
+      <p><b>原模式：</b>AI 健康评估、线上问诊、基层医疗和预防性健康服务，试图覆盖预防、诊断和治疗全链路。</p>
+      <p><b>事件：</b>2023 年美国相关实体进入 Chapter 7 破产程序；英国核心业务实体进入 administration，部分资产出售给 eMed。不同国家实体和业务的法律状态并不完全相同。</p>
+      <p><b>暴露的问题：</b>业务扩张、医疗服务组织、资本需求和现金流压力叠加；数字入口不等于医疗交付成本低，跨市场和多业务线扩张增加了运营复杂度。</p>
+      <p><b>对五叶守护：</b>不要一开始做全病种、全人群、全渠道平台。先把一个场景做出可复制的产品和服务单元，再扩展相邻场景。</p>
+      <p class="small">资料：英国公司注册处管理人报告、美国破产报道。<a href="https://www.beckershospitalreview.com/finance/babylon-health-files-for-bankruptcy/" target="_blank" rel="noopener">美国破产报道</a> · <a href="https://s3.eu-west-2.amazonaws.com/document-api-images-live.ch.gov.uk/docs/_rqhGnoE02b5frAH-_QUB0IC4nxogya3WGw1XCdlkVw/application-pdf" target="_blank" rel="noopener">英国管理人报告</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>Forward Health</h3><div class="case-meta">科技驱动基层医疗<br><span class="tag bad">停止运营</span></div></div>
+    <div class="case-body">
+      <p><b>原模式：</b>会员制基层医疗和 AI 自助诊疗设备 CarePods，试图通过高科技模块化设备提供便捷健康服务。</p>
+      <p><b>事件：</b>2024 年 11 月宣布停止运营。媒体报道其累计融资约 4 亿美元，员工规模接近 200 人。</p>
+      <p><b>暴露的问题：</b>重硬件、重线下设施和重运营投入；设备体验、使用频率、场地部署和单位经济模型没有达到支撑规模扩张的程度。</p>
+      <p><b>对五叶守护：</b>硬件不是健康管理产品的必选起点。优先解决数据接入、服务流程和专业交付，尽量通过成熟设备厂商合作完成采集。</p>
+      <p class="small">资料：The Information 报道。<a href="https://www.theinformation.com/articles/forward-startup-behind-doctor-in-box-healthcare-modules-to-shut-down" target="_blank" rel="noopener">查看报道</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>IBM Watson Health</h3><div class="case-meta">医疗数据与 AI 资产<br><span class="tag warn">业务出售 / 战略调整</span></div></div>
+    <div class="case-body">
+      <p><b>原模式：</b>以医疗数据、临床决策支持、影像和分析能力构建综合性医疗 AI 业务。</p>
+      <p><b>事件：</b>IBM 于 2022 年宣布将 Watson Health 的医疗数据与分析资产出售给 Francisco Partners。该事件更准确的表述是业务资产出售和战略重组，不等于所有相关产品或资产消失。</p>
+      <p><b>暴露的问题：</b>平台愿景与可持续的产品商业化之间存在距离；大型医疗机构的集成、验证、采购和交付复杂，单纯依靠技术品牌难以解决产品聚焦和盈利问题。</p>
+      <p><b>对五叶守护：</b>不要先做大而全的平台底座再寻找业务。每项底层能力都应绑定一个明确产品、用户工作流和付费理由。</p>
+      <p class="small">资料：IBM 官方公告。<a href="https://newsroom.ibm.com/2022-01-21-Francisco-Partners-to-Acquire-IBMs-Healthcare-Data-and-Analytics-Assets" target="_blank" rel="noopener">查看 IBM 公告</a></p>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>京东健康家庭医生业务（组织调整案例）</h3><div class="case-meta">家庭医生会员服务<br><span class="tag warn">业务重组，非整体关停</span></div></div>
+    <div class="case-body">
+      <p><b>原模式：</b>面向个人和企业提供家庭医生、在线医疗和健康服务，希望建立长期服务关系。</p>
+      <p><b>事件：</b>2024 年家庭医生事业部进行组织调整，C 端业务并入互联网医疗事业部，B 端业务并入企业业务事业部。京东健康对媒体表示调整不涉及业务和人员裁撤。</p>
+      <p><b>可观察的问题：</b>媒体报道指出，独立家医会员业务曾面临投入较大、盈利模式不清晰等挑战。由于企业官方回应与媒体报道口径不同，不能把它简单定性为“业务失败”。</p>
+      <p><b>对五叶守护：</b>家庭医生、健康管理会员并非天然有续费。应拆解用户愿意为哪种明确服务付费、服务频次是否足够、人工成本是否可控，以及机构是否能获得可量化收益。</p>
+      <p class="small">资料：第一财经、财新。<a href="https://www.yicai.com/news/102135602.html" target="_blank" rel="noopener">第一财经报道</a> · <a href="https://www.caixin.com/2024-05-30/102201631.html" target="_blank" rel="noopener">财新报道</a></p>
+    </div>
+  </article>
+
+  <h3>4.1 失败路径归纳</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>失败 / 受挫类型</th><th>典型案例</th><th>根本问题</th><th>五叶守护应避免</th></tr></thead>
+    <tbody>
+      <tr><td>支付机制未建立</td><td>Pear</td><td>临床证据、医生采用与支付覆盖不同步</td><td>只证明“有用”，不证明“谁付费”</td></tr>
+      <tr><td>过度扩张</td><td>Babylon</td><td>多业务、多地区、医疗交付成本复杂</td><td>一开始做全病种、全渠道平台</td></tr>
+      <tr><td>重资产技术路线</td><td>Forward</td><td>设备与场地投入高，使用频率和单位经济性不足</td><td>过早自研硬件、建设线下设施</td></tr>
+      <tr><td>平台愿景过大</td><td>IBM Watson Health</td><td>资产和技术能力未形成可持续产品经营</td><td>先建平台再找真实需求</td></tr>
+      <tr><td>会员服务盈利难</td><td>京东家医组织调整</td><td>个人持续付费、服务频次、人工成本存在挑战</td><td>把会员订阅当作默认收入来源</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section" id="software">
+  <div class="section-head"><div class="num">05</div><div><h2>软件与硬件生态：一套健康管理产品需要什么</h2><p class="small">从产品架构看软硬件分工，不把设备接入等同于健康管理能力</p></div></div>
+  <h3>5.1 软件产品矩阵</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>软件端</th><th>主要用户</th><th>关键能力</th><th>产品价值</th></tr></thead>
+    <tbody>
+      <tr><td>用户端 App / 小程序</td><td>患者、健康管理对象</td><td>健康档案、目标、计划、任务、打卡、报告、提醒、设备连接</td><td>让用户理解并持续执行计划</td></tr>
+      <tr><td>健管师工作台</td><td>健康管理师、营养师、护士</td><td>人群列表、风险分层、方案审核、随访、异常处理、服务记录</td><td>提升人均管理人数和服务质量</td></tr>
+      <tr><td>医生 / 专家端</td><td>医生、专科专家</td><td>风险升级、专业审核、诊疗建议、转诊协同、随访反馈</td><td>建立医疗专业边界与协同机制</td></tr>
+      <tr><td>机构运营后台</td><td>医院管理者、项目负责人</td><td>项目配置、人员权限、用户分配、服务进度、质量、经营分析</td><td>管理业务运营和交付结果</td></tr>
+      <tr><td>设备与数据平台</td><td>机构 IT、平台管理员</td><td>设备接入、数据标准、数据质量、身份匹配、异常监控</td><td>形成可靠、连续、可用的数据资产</td></tr>
+      <tr><td>AI 能力层</td><td>专业人员与用户</td><td>指标解读、风险提示、方案草拟、食物识别、随访摘要、报告生成</td><td>降低重复劳动，提升服务覆盖能力</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>5.2 硬件分类与接入优先级</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>设备类型</th><th>数据价值</th><th>典型用途</th><th>接入建议</th></tr></thead>
+    <tbody>
+      <tr><td>体重秤 / 体脂秤</td><td>体重趋势、部分体成分估算</td><td>体重管理、体重变化追踪</td><td><b>优先接入</b>；注意不同设备体脂算法差异</td></tr>
+      <tr><td>血压计</td><td>家庭血压趋势</td><td>高血压管理、心血管风险管理</td><td><b>优先接入</b>；需保留测量时间、姿势和设备来源</td></tr>
+      <tr><td>血糖仪</td><td>指尖血糖点测</td><td>糖尿病日常监测</td><td><b>按项目接入</b>；数据质量和测量场景很重要</td></tr>
+      <tr><td>CGM</td><td>连续葡萄糖趋势</td><td>特定糖代谢管理场景</td><td>按适应人群与成本配置，不宜普遍强制使用</td></tr>
+      <tr><td>手环 / 手表</td><td>活动、心率、睡眠估算</td><td>运动和生活方式管理</td><td>按用户设备覆盖和数据质量接入</td></tr>
+      <tr><td>睡眠监测设备</td><td>睡眠时长、规律性及部分生理信号</td><td>睡眠与生活方式管理</td><td>作为补充数据，不能替代医学睡眠诊断</td></tr>
+      <tr><td>医院检验 / 检查设备</td><td>临床检验、影像和检查指标</td><td>体检、慢病风险和临床协同</td><td>重视系统接口、标准编码、授权和数据治理</td></tr>
+    </tbody>
+  </table></div>
+  <h3>5.3 建议的软件技术架构</h3>
+  <div class="flow">
+    <span>设备 / HIS / LIS / 体检系统</span><b>→</b><span>数据接入与标准化</span><b>→</b><span>统一健康档案</span><b>→</b><span>评估与风险分层</span><b>→</b><span>项目规则 / AI 辅助</span><b>→</b><span>任务与服务工作流</span><b>→</b><span>结果评价与审计</span>
+  </div>
+  <p>建议底层建设统一身份、授权、数据标准、设备适配、操作日志、模型版本和审计机制。AI 输出要保留来源、适用边界和人工审核状态。对涉及诊断、治疗、用药或医疗器械功能的能力，应先做监管属性和合规评估。</p>
+  <div class="callout"><b>产品原则：</b>设备负责采集，软件负责组织和分析，专业服务负责干预，评价体系负责证明结果。任何一层缺失，都会削弱健康管理闭环。</div>
+</section>
+
+<section class="section" id="insights">
+  <div class="section-head"><div class="num">06</div><div><h2>行业研究洞察</h2><p class="small">从案例中提炼的八条行业规律</p></div></div>
+  <h3>洞察 1：健康管理的产品单位应是“服务项目”，不是“功能模块”</h3>
+  <p>体重管理、糖尿病管理、高血压管理等项目，应有明确入组标准、评估流程、服务周期、干预计划、任务频次、人工升级规则和结项评价。用户买的是一段有目标、有支持、有反馈的服务，而不是一组按钮。</p>
+  <h3>洞察 2：使用者、服务者、采购者和最终付费者经常不是同一方</h3>
+  <p>患者使用，健管师操作，医生审核，医院采购，企业或保险可能付费。产品设计要同时满足多角色，而不是只优化患者端体验。</p>
+  <h3>洞察 3：医院入口的优势在于专业信任和人群触达，不代表天然有预算</h3>
+  <p>医院可以提供专业资源、检查数据和患者入口，但软件采购仍受预算科目、信息化计划、招投标、系统集成和回款周期影响。政策鼓励健康管理，不等于采购订单已经形成。</p>
+  <h3>洞察 4：真正的壁垒是专业流程、服务网络和数据质量的组合</h3>
+  <p>单纯的 AI 生成、图片识别和健康问答容易被复制。更难复制的是经过验证的干预路径、专业审核规则、真实世界服务数据、机构流程嵌入和可控交付成本。</p>
+  <h3>洞察 5：AI 的核心价值是提升专业服务的边际效率</h3>
+  <p>优先把 AI 用在资料整理、报告摘要、风险提示、方案草拟、营养估算、随访内容生成和运营任务分发。高风险决策应由具备资质的专业人员判断或审核。评价 AI 不应只看调用量，还要看节省了多少人工时间、减少了多少错误、是否提高了服务覆盖率。</p>
+  <h3>洞察 6：硬件的价值取决于它能否改变干预决策</h3>
+  <p>连续数据不一定比单次数据更有价值。只有当数据可靠、可解释，并能触发适当的干预时，才值得增加设备成本。对五叶守护而言，开放接入优先于自研硬件。</p>
+  <h3>洞察 7：持续付费来自持续价值，不来自“会员”这个名字</h3>
+  <p>个人订阅面临低频需求、用户流失和服务成本问题。机构合同更容易组织付费，但必须证明管理人群规模、服务质量、健康结果或运营效率。续费理由应当在项目设计时就明确。</p>
+  <h3>洞察 8：规模、收入、盈利、健康效果是四个不同维度</h3>
+  <p>成员数、覆盖人数和服务人次反映触达；收入反映商业交易；利润反映经营结果；临床或健康指标变化反映效果。不能用其中一个指标替代其他指标。</p>
+</section>
+
+<section class="section" id="opportunity">
+  <div class="section-head"><div class="num">07</div><div><h2>产品市场机会</h2><p class="small">政策趋势、客户需求和可复制能力共同决定优先级</p></div></div>
+  <h3>7.1 国内政策与需求信号</h3>
+  <ul>
+    <li><b>体重管理：</b>国家卫健委等 16 个部门于 2024 年发布“体重管理年”活动实施方案，提出提升全民体重管理意识、鼓励医疗机构开展体重管理服务，并支持专业指导和健康生活方式干预。</li>
+    <li><b>规范化体重管理：</b>国家卫健委发布《体重管理指导原则（2024 年版）》，推动医疗卫生人员科学开展体重管理。</li>
+    <li><b>基层慢病管理：</b>2025 年相关指导意见强调整合防、筛、诊、治、管、康全流程服务，发挥基层医疗机构、医联体和家庭医生签约作用，并提出数智赋能和信息互通。</li>
+    <li><b>基层健康管理中心：</b>2025 年基层慢性病健康管理服务能力建设指引提出，可通过功能整合设立一站式基层慢性病健康管理中心。</li>
+  </ul>
+  <div class="warning">政策信号说明的是服务方向和制度环境，不等于医院已经设立独立预算，也不等于软件厂商能直接获得医保支付。商业机会仍需逐家机构验证采购路径。</div>
+  <p class="small">政策原文：<a href="https://www.nhc.gov.cn/wjw/c100375/202406/8378b85fd06a4b61b969d791783ca3ff.shtml" target="_blank" rel="noopener">体重管理年实施方案</a> · <a href="https://www.nhc.gov.cn/wjw/c100378/202412/f3f58b54fbeb4c87b14164fac898bf08.shtml" target="_blank" rel="noopener">体重管理指导原则</a> · <a href="https://app.www.gov.cn/govdata/gov/202510/29/539210/article.html" target="_blank" rel="noopener">基层慢性病健康管理指导意见政策解读</a> · <a href="https://app.www.gov.cn/govdata/gov/202511/20/540309/article.html" target="_blank" rel="noopener">基层慢性病健康管理服务能力建设指引</a></p>
+
+  <h3>7.2 产品机会地图</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>机会方向</th><th>目标客户</th><th>核心产品形态</th><th>商业潜力判断</th><th>五叶守护优先级</th></tr></thead>
+    <tbody>
+      <tr><td>医院健康管理中心运营系统</td><td>医院、医疗集团、健管中心</td><td>档案、评估、项目、人员、随访、运营后台</td><td>有明确机构场景，但采购和交付周期较长</td><td><b class="score">极高</b></td></tr>
+      <tr><td>体重与代谢管理</td><td>医院体重管理门诊、营养门诊、健管中心</td><td>标准化项目 + AI 营养 + 过程监督</td><td>政策与用户需求较明确，需证明依从性和结果</td><td><b class="score">极高</b></td></tr>
+      <tr><td>体检后健康管理</td><td>体检中心、医院</td><td>报告风险分层、专项项目推荐、复测随访</td><td>有现成入口，但检后转化和付费率待验证</td><td><b class="score">高</b></td></tr>
+      <tr><td>慢病全程管理</td><td>医院、基层医疗、医联体</td><td>患者分层、监测、随访、用药协同</td><td>需求长期存在，需与临床及公卫流程衔接</td><td><b class="score">高</b></td></tr>
+      <tr><td>AI 营养管理</td><td>医院、营养机构、健管团队</td><td>营养评估、食谱、图片识别、动态调整</td><td>有差异化空间，但精度和专业审核是门槛</td><td><b class="score">高</b></td></tr>
+      <tr><td>智能设备接入平台</td><td>医院、健管机构、企业</td><td>设备适配、数据标准、异常提醒</td><td>是平台能力，单独收费需找到采购场景</td><td><b class="score">中高</b></td></tr>
+      <tr><td>企业员工健康管理</td><td>企业、保险、福利服务商</td><td>员工风险分层、专项项目、群体报告</td><td>可形成合同收入，但销售与运营能力要求高</td><td><b class="score">中期</b></td></tr>
+      <tr><td>保险健康管理</td><td>保险公司、健康险平台</td><td>会员管理、慢病项目、风险服务</td><td>长期潜力较大，准入、数据和效果评估复杂</td><td><b class="score">中长期</b></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>7.3 五个值得优先验证的产品机会</h3>
+  <div class="grid2">
+    <div class="card"><h4>机会 A｜医院健康管理中心运营系统</h4><p>把健康管理业务从 Excel、微信群和分散系统中抽离出来，形成统一档案、项目配置、用户分配、随访任务、异常升级、效果报告和经营分析。</p><span class="tag good">基础产品</span></div>
+    <div class="card"><h4>机会 B｜体重与代谢综合管理</h4><p>以体重为切入口，逐步连接腰围、血压、血糖、血脂、尿酸、脂肪肝等指标，形成营养、运动和行为干预组合。</p><span class="tag good">优先垂直项目</span></div>
+    <div class="card"><h4>机会 C｜AI 营养管理</h4><p>营养评估、能量目标、食谱生成、食物识别、热量估算、执行分析和动态调整。重点是闭环质量，不是单点识图。</p><span class="tag">产品差异化</span></div>
+    <div class="card"><h4>机会 D｜多设备数据融合</h4><p>开放接入体重秤、血压计、血糖仪、CGM 和可穿戴设备，形成可信的数据来源、质量校验和干预触发。</p><span class="tag">平台能力</span></div>
+    <div class="card"><h4>机会 E｜AI 健康管理师助手</h4><p>自动整理档案、生成随访摘要、识别异常、草拟方案、分配任务、形成阶段报告，帮助一个健管师服务更多用户。</p><span class="tag good">效率与毛利抓手</span></div>
+  </div>
+</section>
+
+<section class="section" id="strategy">
+  <div class="section-head"><div class="num">08</div><div><h2>五叶守护产品战略建议</h2><p class="small">从行业机会收敛到产品路线</p></div></div>
+  <h3>8.1 建议定位</h3>
+  <div class="callout"><b>建议定位：</b>面向医院及专业健康管理机构的数字化运营平台，以标准化健康管理项目为核心，连接用户、专业人员和智能设备，通过 AI 提升评估、方案、随访和运营效率，并用健康结果与机构经营指标证明价值。</div>
+  <p>这个定位既避免与大型互联网医疗平台争夺流量，也避免与设备厂商正面竞争硬件。五叶守护更应争取成为机构健康管理服务的“流程系统 + 项目工具 + 运营能力”。</p>
+
+  <h3>8.2 四阶段产品路线</h3>
+  <div class="grid2">
+    <div class="card"><h4>阶段一｜基础系统产品化</h4><p><b>重点：</b>统一档案、评估、分层、计划、任务、随访、人员工作台、运营报表。</p><p><b>验收：</b>标准机构能否通过配置上线；实施周期是否下降；健管师是否愿意日常使用。</p></div>
+    <div class="card"><h4>阶段二｜垂直项目产品化</h4><p><b>重点：</b>体重与代谢管理、检后管理或一个慢病项目。形成项目模板、服务SOP、专业审核和结项报告。</p><p><b>验收：</b>入组率、执行率、随访完成率、阶段性健康指标变化、项目毛利。</p></div>
+    <div class="card"><h4>阶段三｜AI 与设备融合</h4><p><b>重点：</b>AI 评估辅助、营养方案、图片识别、随访摘要、异常提醒、设备接入、健管师助手。</p><p><b>验收：</b>人工节省时间、建议采纳率、识别误差、异常处理时效、单人服务能力。</p></div>
+    <div class="card"><h4>阶段四｜支付方与生态扩展</h4><p><b>重点：</b>体检中心、企业健康、保险、基层医疗、设备生态和专业服务网络。</p><p><b>验收：</b>新客户复制成本、合同续费率、服务毛利和客户生命周期价值。</p></div>
+  </div>
+
+  <h3>8.3 体重及代谢管理项目建议流程</h3>
+  <div class="flow">
+    <span>入组与知情授权</span><b>→</b><span>基线评估</span><b>→</b><span>风险分层</span><b>→</b><span>目标设定</span><b>→</b><span>饮食 / 运动 / 行为计划</span><b>→</b><span>日常执行与监测</span><b>→</b><span>健管师干预</span><b>→</b><span>阶段复评</span><b>→</b><span>方案迭代 / 结项</span>
+  </div>
+  <p>每一步都要定义责任人、输入数据、输出物、系统动作和异常规则。例如用户连续未打卡，不只是推送提醒，还要判断是否需要人工联系；体重短期波动不应被简单判为失败；出现危险症状或异常指标时，应触发专业评估或就医建议，而不是由通用模型自行给出诊疗结论。</p>
+
+  <h3>8.4 不同阶段的产品取舍</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>能力</th><th>近期</th><th>中期</th><th>判断理由</th></tr></thead>
+    <tbody>
+      <tr><td>档案、评估、项目、随访、运营后台</td><td><b>必须做</b></td><td>持续优化</td><td>构成机构产品基本盘</td></tr>
+      <tr><td>体重 / 营养 / 代谢项目</td><td><b>重点做深</b></td><td>扩展相邻疾病</td><td>容易形成可展示的服务闭环</td></tr>
+      <tr><td>AI 方案与内容生成</td><td>受控试点</td><td>扩大自动化</td><td>必须有规则、审核和效果验证</td></tr>
+      <tr><td>图片识别与营养估算</td><td>重点改善精度和交互</td><td>多模态融合</td><td>用户价值明显，但误差需透明</td></tr>
+      <tr><td>第三方设备接入</td><td>优先接入高价值设备</td><td>扩展设备生态</td><td>开放合作优于自研硬件</td></tr>
+      <tr><td>自研硬件 / 线下智能终端</td><td>暂缓</td><td>有明确需求再评估</td><td>投入重、供应链和售后复杂</td></tr>
+      <tr><td>保险支付 / 大规模企业市场</td><td>先做需求访谈</td><td>形成成熟案例后拓展</td><td>需要证据、销售渠道和合同能力</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section" id="metrics">
+  <div class="section-head"><div class="num">09</div><div><h2>商业化设计与指标体系</h2><p class="small">产品从立项开始就要能回答：谁付钱、为什么付、凭什么续费</p></div></div>
+  <h3>9.1 建议的收入结构</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>收入项</th><th>收费对象</th><th>收费内容</th><th>适合阶段</th><th>关键约束</th></tr></thead>
+    <tbody>
+      <tr><td>系统建设 / SaaS 年费</td><td>医院、健管机构</td><td>基础平台、模块、运维、接口</td><td>当前</td><td>避免无限定制，明确标准包和额外工作量</td></tr>
+      <tr><td>标准项目服务费</td><td>医院、体检中心、企业</td><td>体重、代谢、慢病项目运营</td><td>近期</td><td>定义服务周期、人数、专业服务范围和验收口径</td></tr>
+      <tr><td>按管理人数收费</td><td>医院、企业、保险</td><td>按入组用户 / 年或服务周期计价</td><td>中期</td><td>区分签约人数、入组人数和实际活跃人数</td></tr>
+      <tr><td>专业增值服务</td><td>机构或个人</td><td>营养、运动、复评、专项咨询</td><td>中长期</td><td>服务资质、责任边界、成本和合规</td></tr>
+      <tr><td>设备及数据服务</td><td>机构、企业、个人</td><td>设备采购、租赁、数据接入</td><td>中长期</td><td>不宜以设备销售替代平台核心价值</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>9.2 指标树：从过程指标到经营结果</h3>
+  <div class="grid3">
+    <div class="card"><h4>获客与入组</h4><ul><li>签约机构数</li><li>可管理人群数</li><li>评估完成率</li><li>入组转化率</li></ul></div>
+    <div class="card"><h4>使用与服务</h4><ul><li>30 / 90 天留存</li><li>任务完成率</li><li>有效打卡率</li><li>随访完成率</li><li>人工干预时效</li></ul></div>
+    <div class="card"><h4>健康结果</h4><ul><li>体重、腰围变化</li><li>血压、血糖等指标变化</li><li>目标达成率</li><li>风险升级与转诊情况</li></ul></div>
+    <div class="card"><h4>机构运营</h4><ul><li>健管师人均管理人数</li><li>单人服务时长</li><li>方案审核时长</li><li>异常处理闭环率</li></ul></div>
+    <div class="card"><h4>商业结果</h4><ul><li>客单价 / 项目收入</li><li>项目毛利率</li><li>续费率</li><li>获客成本与回收期</li></ul></div>
+    <div class="card"><h4>产品质量</h4><ul><li>数据完整率</li><li>设备同步成功率</li><li>AI 建议采纳率</li><li>错误率与人工纠正率</li></ul></div>
+  </div>
+  <div class="callout"><b>建议内部核心经营指标：</b>单个健管师可安全、有效管理的用户数；单个标准项目的交付成本；单机构上线所需人天；项目续费率；用户健康结果改善情况。它们比“上线多少功能”更接近产品商业价值。</div>
+</section>
+
+<section class="section" id="risks">
+  <div class="section-head"><div class="num">10</div><div><h2>风险、边界与待验证问题</h2><p class="small">把行业推断与尚未验证的假设分开</p></div></div>
+  <h3>10.1 关键风险</h3>
+  <ul>
+    <li><b>支付风险：</b>机构愿意试点，不代表愿意采购；采购软件不代表愿意为持续健康管理项目付费。</li>
+    <li><b>服务成本：</b>若每增加一名用户都需要大量人工随访，规模增长可能同时放大成本。</li>
+    <li><b>效果归因：</b>体重、血压、血糖变化受到药物、疾病、生活环境和用户自我选择等多因素影响，不能把全部变化归功于软件。</li>
+    <li><b>数据质量：</b>设备来源、测量条件、数据缺失、身份匹配和指标标准不统一，会影响风险判断。</li>
+    <li><b>AI 安全：</b>营养建议、疾病风险和医疗建议需要明确边界、规则校验、人工审核和可追溯记录。</li>
+    <li><b>监管合规：</b>医疗数据涉及个人信息保护、数据安全、授权、最小必要、留存和跨机构共享；产品功能若构成医疗器械软件或医疗服务，应另行评估监管要求。</li>
+    <li><b>机构定制：</b>项目型收入容易诱发大量定制，必须设定产品标准包、接口边界、配置能力和定制报价。</li>
+  </ul>
+  <h3>10.2 下一步必须做的客户验证</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>访谈对象</th><th>需要验证的问题</th><th>关键证据</th></tr></thead>
+    <tbody>
+      <tr><td>医院健康管理中心负责人</td><td>当前业务目标、预算来源、项目收入、最痛流程、采购决策链</td><td>预算科目、采购计划、现有系统合同、真实业务量</td></tr>
+      <tr><td>医生 / 专科负责人</td><td>哪些风险需要医学判断，哪些工作可标准化，哪些指标能代表效果</td><td>诊疗路径、指南、审核规则、转诊标准</td></tr>
+      <tr><td>健康管理师 / 营养师</td><td>日常服务时间花在哪里，多少用户可被有效管理，什么任务最耗时</td><td>工时记录、服务SOP、用户分层、人工干预频次</td></tr>
+      <tr><td>用户 / 患者</td><td>为什么加入、为什么坚持、为什么中断、愿意为什么付费</td><td>入组转化、留存、访谈、付费实验</td></tr>
+      <tr><td>企业 / 保险采购方</td><td>采购目标是福利、降本、风险管理还是客户留存</td><td>合同结构、ROI 口径、续约条件</td></tr>
+    </tbody>
+  </table></div>
+  <h3>10.3 关键假设清单</h3>
+  <ol>
+    <li>医院是否愿意为“健康管理运营效率”单独采购系统？还是只愿意采购更大范围的信息化项目？</li>
+    <li>体重管理门诊是否有明确项目预算、可收费服务或院外合作路径？</li>
+    <li>健管师使用系统后，单人可管理用户数能否显著提升？提升多少才足以覆盖软件成本？</li>
+    <li>用户愿意持续执行的核心驱动力是专业人员反馈、设备数据、目标进展，还是同伴支持？</li>
+    <li>AI 营养和方案能力能否达到专业人员可接受的准确度，并减少而非增加审核工作？</li>
+    <li>医院、体检中心、企业和保险四类客户中，哪一类销售周期最短、复购最明确、交付成本最低？</li>
+  </ol>
+</section>
+
+<section class="section" id="sources">
+  <div class="section-head"><div class="num">资料</div><div><h2>资料来源、研究口径与局限</h2><p class="small">优先引用公司年报、监管部门、SEC / 法院文件及主流财经媒体</p></div></div>
+  <h3>参考的竞品研究结构</h3>
+  <p>用户提供的《医疗 AI · B 端竞品研究与产品策略》作为结构参考：其采用“行业与产品现状—竞品案例—核心洞察—产品策略”的组织方式，并强调按业务方向选样、区分标杆与失败样本、逐项拆解付费方、计价方式、交付成本和产品化难点。本报告将这一研究方法迁移到健康管理行业，而不是照搬医疗 AI 竞品名单。</p>
+  <p><a href="https://rio-studio.github.io/wisediag-report/" target="_blank" rel="noopener">打开原始竞品调研报告</a></p>
+  <h3>主要公开资料</h3>
+  <ol class="source-list">
+    <li><a href="https://financialfilings.com/filings/ping-an-healthcare-and-technology-company-limited/annual-report/2026/33085833/" target="_blank" rel="noopener">平安健康 2025 年年度报告文本</a>：总收入及企业健康管理业务数据。</li>
+    <li><a href="https://static.cninfo.com.cn/finalpage/2026-04-28/1225216618.PDF" target="_blank" rel="noopener">美年健康 2025 年年度报告</a>：体检服务和其他服务收入结构。</li>
+    <li><a href="https://ebs.publicnow.com/view/154C97683B178E771B5024C16AB5BC466CA89E4D" target="_blank" rel="noopener">方舟健客 2025 年业绩公告</a>：公司整体收入和利润。</li>
+    <li><a href="https://static.cninfo.com.cn/finalpage/2026-04-25/1225185114.PDF" target="_blank" rel="noopener">鱼跃医疗 2025 年年度报告</a>：设备解决方案收入结构。</li>
+    <li><a href="https://www.omadahealth.com/resource-center/omada-health-reports-fourth-quarter-and-full-year-2025-results" target="_blank" rel="noopener">Omada Health 2025 年全年业绩公告</a>：收入、成员数及调整后 EBITDA 口径。</li>
+    <li><a href="https://ir.hingehealth.com/news/news-details/2026/Hinge-Health-reports-fourth-quarter-and-full-year-2025-financial-results/default.aspx" target="_blank" rel="noopener">Hinge Health 2025 年全年业绩公告</a>：收入、毛利率、GAAP 与非 GAAP 经营结果。</li>
+    <li><a href="https://www.sec.gov/Archives/edgar/data/2133022/000119312526381855/d119865ds1.htm" target="_blank" rel="noopener">Oura 2025 财年 S-1 文件</a>：硬件与会员收入结构。</li>
+    <li><a href="https://cases.stretto.com/public/X237/12136/PLEADINGS/1213612262480000000076.pdf" target="_blank" rel="noopener">Pear Therapeutics 破产法院解散通知</a>：Chapter 11 清算与解散进程。</li>
+    <li><a href="https://www.beckershospitalreview.com/finance/babylon-health-files-for-bankruptcy/" target="_blank" rel="noopener">Babylon Health 破产报道</a>：美国实体破产和核心业务变化。</li>
+    <li><a href="https://s3.eu-west-2.amazonaws.com/document-api-images-live.ch.gov.uk/docs/_rqhGnoE02b5frAH-_QUB0IC4nxogya3WGw1XCdlkVw/application-pdf" target="_blank" rel="noopener">Babylon 英国实体管理人报告</a>：资产出售和管理程序。</li>
+    <li><a href="https://www.theinformation.com/articles/forward-startup-behind-doctor-in-box-healthcare-modules-to-shut-down" target="_blank" rel="noopener">Forward Health 停止运营报道</a>：公司关闭与 CarePods 路线。</li>
+    <li><a href="https://newsroom.ibm.com/2022-01-21-Francisco-Partners-to-Acquire-IBMs-Healthcare-Data-and-Analytics-Assets" target="_blank" rel="noopener">IBM 官方公告</a>：Watson Health 医疗数据与分析资产出售。</li>
+    <li><a href="https://www.yicai.com/news/102135602.html" target="_blank" rel="noopener">第一财经：京东健康家庭医生业务组织调整</a>：公司回应与业务整合口径。</li>
+    <li><a href="https://www.caixin.com/2024-05-30/102201631.html" target="_blank" rel="noopener">财新：京东家医产品与组织调整</a>：业务背景报道。</li>
+    <li><a href="https://www.nhc.gov.cn/wjw/c100375/202406/8378b85fd06a4b61b969d791783ca3ff.shtml" target="_blank" rel="noopener">国家卫健委：“体重管理年”活动实施方案</a>：体重管理政策方向。</li>
+    <li><a href="https://www.nhc.gov.cn/wjw/c100378/202412/f3f58b54fbeb4c87b14164fac898bf08.shtml" target="_blank" rel="noopener">国家卫健委：体重管理指导原则（2024 年版）</a>：医疗卫生机构体重管理指导。</li>
+    <li><a href="https://app.www.gov.cn/govdata/gov/202510/29/539210/article.html" target="_blank" rel="noopener">基层慢性病健康管理服务指导意见政策解读</a>：基层慢病全流程管理与数智赋能。</li>
+    <li><a href="https://app.www.gov.cn/govdata/gov/202511/20/540309/article.html" target="_blank" rel="noopener">基层慢性病健康管理服务能力建设指引</a>：基层健康管理中心建设方向。</li>
+  </ol>
+  <hr>
+  <h3>研究口径说明</h3>
+  <ul>
+    <li>本报告不是第三方审计报告，也不是市场规模预测；市场吸引力和产品优先级属于基于公开案例的定性判断。</li>
+    <li>公司披露数据以对应报告期为准，年度、半年度、九个月和季度数据不能直接比较。</li>
+    <li>企业官网的客户覆盖数、签约人数、服务人次属于公司披露口径，未必代表活跃、付费或独立用户。</li>
+    <li>“成功案例”指某一商业模式或产品路径已有经营验证，不代表企业所有业务均盈利，也不代表其模式可直接复制。</li>
+    <li>“失败案例”区分破产、清算、业务资产出售、停止运营和组织重组，避免把不同事件笼统称为倒闭。</li>
+    <li>国内政策支持与实际采购预算、医保支付和商业保险覆盖是不同层次，需要逐家客户验证。</li>
+  </ul>
+</section>
+<div class="footer">五叶守护｜健康管理行业研究报告 · 研究整理版 · 2026.11<br>用于行业研究与产品规划讨论；涉及临床路径、医疗器械、数据处理和医疗服务的实际应用，须由专业及合规团队进一步审核。</div>
+</main>
+</div>
+<script>
+const links=[...document.querySelectorAll('.sidebar a')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+    }
+  });
+},{rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
